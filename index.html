@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nilesh ❤️ Vanshika | Wedding Memories</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #fff0f5, #ffe4ec, #fff);
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        /* Floating Hearts */
+        .hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -20px;
+            color: rgba(255, 105, 180, 0.3);
+            animation: floatUp linear infinite;
+            font-size: 20px;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-120vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        nav h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            color: #ff2e7e;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ff2e7e;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+                url('IMG_6632.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            color: white;
+            animation: fadeIn 2s ease;
+        }
+
+        .hero h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #ff2e7e;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.4s;
+            box-shadow: 0 10px 25px rgba(255, 46, 126, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: #ff0f6d;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            color: #ff2e7e;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .section-title p {
+            margin-top: 10px;
+            color: #777;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 25px;
+            transition: 0.5s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05) rotate(1deg);
+        }
+
+        /* Videos */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: 0.4s;
+            position: relative;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 230px;
+            border: none;
+        }
+
+        .video-content {
+            padding: 20px;
+        }
+
+        .video-content h3 {
+            color: #ff2e7e;
+            margin-bottom: 10px;
+        }
+
+        /* Love Story */
+        .love-story {
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #ff2e7e;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 70px;
+        }
+
+        footer h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Scroll Animation */
+        .hidden {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive */
+@media(max-width:768px){
+
+  nav{
+    padding:12px 5%;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  nav h1{
+    font-size:1.8rem;
+  }
+
+  nav ul{
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  nav ul li a{
+    font-size:0.85rem;
+  }
+
+  .hero{
+    height:100vh;
+    padding:120px 20px 40px;
+    background-position:center;
+  }
+
+  .hero-content{
+    width:100%;
+  }
+
+  .hero h2{
+    font-size:2.7rem;
+    line-height:1.2;
+  }
+
+  .hero p{
+    font-size:0.95rem;
+    padding:0 10px;
+    line-height:1.6;
+  }
+
+  .btn{
+    padding:12px 22px;
+    font-size:0.9rem;
+  }
+
+  section{
+    padding:70px 5%;
+  }
+
+  .section-title h2{
+    font-size:2.3rem;
+  }
+
+  .section-title p{
+    font-size:0.95rem;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .gallery img{
+    height:280px;
+  }
+
+  .video-grid{
+    grid-template-columns:1fr;
+  }
+
+  .video-card iframe{
+    height:220px;
+  }
+
+  .love-story{
+    padding:25px 18px;
+    font-size:0.95rem;
+  }
+
+  footer h2{
+    font-size:2rem;
+  }
+
+}
+
+.video-thumb{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  border-radius:25px 25px 0 0;
+}
+
+.video-thumb img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  transition:0.5s;
+}
+
+.video-thumb:hover img{
+  transform:scale(1.08);
+}
+
+.play-btn{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:75px;
+  height:75px;
+  border-radius:50%;
+  background:rgba(255, 20, 90, 0.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:32px;
+  box-shadow:0 10px 25px rgba(255,20,90,0.4);
+  transition:0.4s;
+}
+
+.video-thumb:hover .play-btn{
+  transform:translate(-50%,-50%) scale(1.15);
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="hearts" id="hearts"></div>
+
+    <!-- Navbar -->
+    <nav>
+        <h1>N ❤️ V</h1>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#story">Our Story</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <h2>Nilesh ❤️ Vanshika</h2>
+
+            <p>
+                Two Souls • One Heart • Endless Memories
+            </p>
+
+            <a href="#videos" class="btn">
+                Watch Our Memories
+            </a>
+        </div>
+
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="hidden">
+
+        <div class="section-title">
+            <h2>Beautiful Moments</h2>
+            <p>Our sweetest captured memories together</p>
+        </div>
+
+        <div class="gallery">
+
+            <!-- Replace these with your own photos -->
+            <img src="IMG_6539.jpg" alt="">
+            <img src="IMG_6538.jpg" alt="">
+            <img src="IMG_7308.png" alt="">
+            <img src="IMG_6531.jpg" alt="">
+            <img src="IMG_6636.jpg" alt="">
+            <img src="IMG_6638.jpg" alt="">
+            <img src="pre1 (1).jpeg" alt="">
+            <img src="pre1 (2).jpeg" alt="">
+            <img src="pre1 (3).jpeg" alt="">
+            <img src="pre1 (4).jpeg" alt="">
+            <img src="pre1 (5).jpeg" alt="">
+        </div>
+
+    </section>
+
+    <!-- Videos -->
+    <section id="videos" class="hidden">
+
+        <div class="section-title">
+            <h2>Wedding Videos</h2>
+            <p>Every video is a heartbeat of our love story</p>
+        </div>
+
+        <div class="video-grid">
+
+            <!-- Video Card -->
+            <div class="video-card">
+            
+                <a href="https://youtu.be/ibuGSOAoxj4?si=LaT2jiYPOFH5CQIn" target="_blank" class="video-thumb">
+            
+                    <img src="IMG_6632.jpg" alt="Wedding Video">
+            
+                    <div class="play-btn">▶</div>
+            
+                </a>
+            
+                <div class="video-content">
+                    <h3>Nilesh & Vanshika Tie the Knot 💖</h3>
+                    <p>Our magical wedding memories together forever.</p>
+                </div>
+            
+            </div>
+            <!-- Video Card -->
+            <div class="video-card">
+            
+                <a href="https://youtu.be/34uYXRQ7UVM?si=lUzS6TUlZG-dc8_G" target="_blank" class="video-thumb">
+            
+                    <img src="one (4).jpg" alt="Wedding Video">
+            
+                    <div class="play-btn">▶</div>
+            
+                </a>
+            
+                <div class="video-content">
+                    <h3>Wedding Reception Ceremony | Nilesh ❤️ Vanshika</h3>
+                    <p>Our magical wedding memories together forever.</p>
+                </div>
+            
+            </div>
+
+
+            <!-- Video Card -->
+            <div class="video-card">
+            
+                <a href="https://youtu.be/EmuYK7-9m_I?si=4DzxrJgTl7y3epLZ" target="_blank" class="video-thumb">
+            
+                    <img src="one (3).jpg" alt="Wedding Video">
+            
+                    <div class="play-btn">▶</div>
+            
+                </a>
+            
+                <div class="video-content">
+                    <h3>Wedding Carnival | Nilesh ❤️ Vanshika | Fun, Games...</h3>
+                    <p>Our magical wedding memories together forever.</p>
+                </div>
+            
+            </div>
+
+
+            <!-- Video Card -->
+            <div class="video-card">
+            
+                <a href="https://youtu.be/ls3jBjhoklA?si=qq0jqIVkpE_8ZdHA" target="_blank" class="video-thumb">
+            
+                    <img src="one (2).jpg" alt="Wedding Video">
+            
+                    <div class="play-btn">▶</div>
+            
+                </a>
+            
+                <div class="video-content">
+                    <h3>When Vanshika’s Family Arrived – Pure Wedding Magic ✨</h3>
+                    <p>Our magical wedding memories together forever.</p>
+                </div>
+            
+            </div>
+
+            <!-- Video Card -->
+            <div class="video-card">
+            
+                <a href="https://youtu.be/yOOY5bv8iVc?si=5xoFbxj9dffcAgN_" target="_blank" class="video-thumb">
+            
+                    <img src="one (1).jpg" alt="Wedding Video">
+            
+                    <div class="play-btn">▶</div>
+            
+                </a>
+            
+                <div class="video-content">
+                    <h3>Vanshika’s Pre-Reception Bash 🔥 | Dance, Fun, Celebration</h3>
+                    <p>Our magical wedding memories together forever.</p>
+                </div>
+            
+            </div>  
+
+        </div>
+
+    </section>
+
+    <!-- Story -->
+    <section id="story" class="hidden">
+
+        <div class="section-title">
+            <h2>Our Love Story</h2>
+            <p>A journey written by destiny and filled with love</p>
+        </div>
+
+        <div class="love-story">
+
+            <p>
+                Every smile, every glance and every little moment brought us closer together.
+                From the first conversation to becoming soulmates forever,
+                our story has been full of love, laughter and magical memories.
+            </p>
+
+            <br>
+
+            <p>
+                This website is not just a collection of videos and photos,
+                it is our heart captured in moments that we will cherish forever.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <h2>Forever Together ❤️</h2>
+
+        <p>
+            Made with love by Nilesh & Vanshika
+        </p>
+
+    </footer>
+
+    <!-- JS -->
+    <script>
+
+        // Floating Hearts
+        const heartsContainer = document.getElementById('hearts');
+
+        for (let i = 0; i < 40; i++) {
+
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+
+            heart.innerHTML = '❤';
+
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+
+            heartsContainer.appendChild(heart);
+        }
+
+        // Scroll Animations
+        const hiddenElements = document.querySelectorAll('.hidden');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        hiddenElements.forEach((el) => observer.observe(el));
+
+    </script>
+
+</body>
+
+</html>
