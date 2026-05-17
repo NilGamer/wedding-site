@@ -376,6 +376,7 @@
   height:230px;
   object-fit:cover;
   transition:0.5s;
+  display:block;
 }
 
 .video-thumb:hover img{
@@ -390,18 +391,44 @@
   width:75px;
   height:75px;
   border-radius:50%;
-  background:rgba(255, 20, 90, 0.9);
+  background:rgba(255, 20, 90, 0.92);
   display:flex;
   align-items:center;
   justify-content:center;
-  color:white;
-  font-size:32px;
-  box-shadow:0 10px 25px rgba(255,20,90,0.4);
-  transition:0.4s;
+  box-shadow:0 10px 30px rgba(255,20,90,0.45);
+  transition:0.4s ease;
+  backdrop-filter:blur(4px);
+
+  /* IMPORTANT */
+  pointer-events:none;
+}
+
+.play-icon{
+  width:0;
+  height:0;
+  border-top:14px solid transparent;
+  border-bottom:14px solid transparent;
+  border-left:22px solid white;
+  margin-left:5px;
 }
 
 .video-thumb:hover .play-btn{
-  transform:translate(-50%,-50%) scale(1.15);
+  transform:translate(-50%,-50%) scale(1.12);
+}
+
+@media(max-width:768px){
+
+  .play-btn{
+    width:62px;
+    height:62px;
+  }
+
+  .play-icon{
+    border-top:11px solid transparent;
+    border-bottom:11px solid transparent;
+    border-left:18px solid white;
+  }
+
 }
     </style>
 </head>
@@ -483,7 +510,9 @@
             
                     <img src="IMG_6632.jpg" alt="Wedding Video">
             
-                    <div class="play-btn">▶</div>
+                    <div class="play-btn">
+                        <div class="play-icon"></div>
+                    </div>
             
                 </a>
             
@@ -498,9 +527,11 @@
             
                 <a href="https://youtu.be/34uYXRQ7UVM?si=lUzS6TUlZG-dc8_G" target="_blank" class="video-thumb">
             
-                    <img src="one4.JPG" alt="Wedding Video">
+                    <img src="one (4).jpg" alt="Wedding Video">
             
-                    <div class="play-btn">▶</div>
+                    <div class="play-btn">
+                        <div class="play-icon"></div>
+                    </div>
             
                 </a>
             
@@ -517,9 +548,11 @@
             
                 <a href="https://youtu.be/EmuYK7-9m_I?si=4DzxrJgTl7y3epLZ" target="_blank" class="video-thumb">
             
-                    <img src="one3.JPG" alt="Wedding Video">
+                    <img src="one (3).jpg" alt="Wedding Video">
             
-                    <div class="play-btn">▶</div>
+                    <div class="play-btn">
+                        <div class="play-icon"></div>
+                    </div>
             
                 </a>
             
@@ -536,9 +569,11 @@
             
                 <a href="https://youtu.be/ls3jBjhoklA?si=qq0jqIVkpE_8ZdHA" target="_blank" class="video-thumb">
             
-                    <img src="one2.JPG" alt="Wedding Video">
+                    <img src="one (2).jpg" alt="Wedding Video">
             
-                    <div class="play-btn">▶</div>
+                    <div class="play-btn">
+                        <div class="play-icon"></div>
+                    </div>
             
                 </a>
             
@@ -554,9 +589,11 @@
             
                 <a href="https://youtu.be/yOOY5bv8iVc?si=5xoFbxj9dffcAgN_" target="_blank" class="video-thumb">
             
-                    <img src="one1.JPG" alt="Wedding Video">
+                    <img src="one (1).jpg" alt="Wedding Video">
             
-                    <div class="play-btn">▶</div>
+                    <div class="play-btn">
+                        <div class="play-icon"></div>
+                    </div>
             
                 </a>
             
